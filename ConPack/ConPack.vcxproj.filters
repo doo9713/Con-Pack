@@ -16,6 +16,18 @@
     <Filter Include="Console">
       <UniqueIdentifier>{fe3eae05-783a-4baf-af57-ede741c4d574}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{0f9d039a-b5a2-424a-9eb6-9d1d8433c4dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unit">
+      <UniqueIdentifier>{61482520-b62d-47b7-8417-ff752f200031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unit\Player">
+      <UniqueIdentifier>{a08f963b-0a08-4220-8ae1-1981304da2b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unit\Enemy">
+      <UniqueIdentifier>{7867a079-be30-4c2b-909a-373ec611c720}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,6 +39,18 @@
     <ClCompile Include="Cons.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Unit\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Unit\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -34,6 +58,18 @@
     </ClInclude>
     <ClInclude Include="Console.h">
       <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Unit\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Unit\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

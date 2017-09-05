@@ -55,7 +55,7 @@ typedef struct tagSelectMenuPosition
 	{
 		return Pos[index];
 	}
-} SMP;
+} SMP, *PSMP;
 
 #include "Console.h"
 
@@ -67,3 +67,6 @@ typedef struct tagSelectMenuPosition
 /* Game Construction Function */
 void BackGround();
 void MenuTitle();
+void PrintMarker(POSITION pos);
+void SettingMenuPos(PSMP smp, INT max, INT xpos, INT ypos);
+void PrintMenu(PSMP smp, INT cnt, INT Select, const string data[]);
