@@ -1,7 +1,5 @@
 #pragma once
 #include "Unit.h"
-
-#define PLAYER "¡Ü"
 class Player : public Unit
 {
 private :

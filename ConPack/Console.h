@@ -69,16 +69,20 @@ public:
 	Console& operator<<(double Number)
 	{
 		static char Buff[32];
-		_gcvt(Number, 5, Buff);
-		operator<<(Buff);
-		return *this;
+		_gcvt(Number, 5, Buff);	
+		return operator<<(Buff);
 	}
 	Console& operator<<(int Number)
 	{
 		static char Buff[32];
 		itoa(Number, Buff, 10);
-		operator<<(Buff);
-		return *this;
+		return operator<<(Buff);
+	}
+	Console& operator<<(char ch)
+	{
+		static char Buff[2];
+		Buff[0] = ch;
+		return operator<<(Buff);
 	}
 	Console& operator<<(const char* str)
 	{
@@ -98,7 +102,7 @@ public:
 		return *this;
 	}
 private:
-	Console(const char * Title = "Hello", int row = WINSIZEX, int col = WINSIZEY);
+	Console(const char * Title = "CON - PAC", int row = WINSIZEX, int col = WINSIZEY);
 	Console(const Console&) = delete;
 public:
 	~Console();

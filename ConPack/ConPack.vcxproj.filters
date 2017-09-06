@@ -28,6 +28,12 @@
     <Filter Include="Unit\Enemy">
       <UniqueIdentifier>{7867a079-be30-4c2b-909a-373ec611c720}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{e3c6eb07-0cbf-4190-b0a0-02a00d9707ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Stage1">
+      <UniqueIdentifier>{557c51b1-6d0f-4b9c-a503-0508e4a00edf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,6 +57,12 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Unit\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>Map\Stage1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -70,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>Map\Stage1</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

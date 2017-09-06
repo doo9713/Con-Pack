@@ -1,20 +1,27 @@
 #include "Game.h"
 #include "Player.h"
+#include "Stage1.h"
 
 void Game::mainActive()
 {
-	POSITION pos(10, 10);
+	FILE * fp = fopen("../data/mapObj.dat", "rt");
+	static char temp[80];
+	int cnt = 0;
+	char * obj[30];
+	
+	POSITION pos(2, 1);
 	Player player(pos);
+	Stage1 map;
 
-	// 멥구성을 메모장으로 해서 가져오기(strncpy??)
-	// 위아래와 양옆 속도차이??
 	while (1)
 	{
 		CONSOLE.Clear();
 
 		BackGround();
 		player.printPlayer();
-		player.printScore();
+		player.printScore();	
+		
+		map.PrintMap();
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 			player.Goleft(&pos);

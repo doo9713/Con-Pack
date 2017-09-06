@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include <list>
 using namespace std;
 
 #define WINSIZEX 80
@@ -70,3 +71,9 @@ void MenuTitle();
 void PrintMarker(POSITION pos);
 void SettingMenuPos(PSMP smp, INT max, INT xpos, INT ypos);
 void PrintMenu(PSMP smp, INT cnt, INT Select, const string data[]);
+
+/* Unit Defines */
+#define CHECKOUTSIDE(x, y) (x < 1 || x > 77 || y < 1 || y > 28) || (x > 31 && x < 47 && y < 3)
+
+/* Player Defines */
+#define PLAYER "¡Ü"
