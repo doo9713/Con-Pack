@@ -17,11 +17,10 @@ void Game::mainActive()
 	{
 		CONSOLE.Clear();
 
-		BackGround();
-		player.printPlayer();
-		player.printScore();	
-		
+		//BackGround();
 		map.PrintMap();
+		player.printPlayer();	
+		player.printScore();
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 			player.Goleft(&pos);

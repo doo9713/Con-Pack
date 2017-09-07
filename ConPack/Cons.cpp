@@ -39,9 +39,9 @@ void MenuTitle()
 		CONPOS(7, 5 + i);
 		for (int j = 0; j < 64; ++j) {
 			if (temp[j] == '.')
-				CONSOLE.SetTextColor(YELLOW);
+				CONSOLE.SetTextColor(LIGHTSKYBLUE);
 			else
-				CONSOLE.SetTextColor(LIGHTBLUE);
+				CONSOLE.SetTextColor(YELLOW);
 			CONSOLE << temp[j];
 		}
 	}
