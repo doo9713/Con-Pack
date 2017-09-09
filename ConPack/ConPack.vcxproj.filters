@@ -63,6 +63,9 @@
     <ClCompile Include="Stage1.cpp">
       <Filter>Map\Stage1</Filter>
     </ClCompile>
+    <ClCompile Include="Func.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -89,5 +92,8 @@
     <ClInclude Include="Stage1.h">
       <Filter>Map\Stage1</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

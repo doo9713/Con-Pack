@@ -1,6 +1,5 @@
 #include "Player.h"
 
-
 void Player::printPlayer()
 {
 	CONSOLE.SetTextColor(YELLOW);
@@ -21,6 +20,14 @@ void Player::printScore()
 	CONSOLE.SetTextColor(YELLOW);
 	CONPOS(35, 1) << "SCORE : " << score;
 	CONSOLE.SetTextColor(WHITE);
+}
+
+void Player::eatCandy(list<INT> * candy)
+{
+	for (auto iter : candy[pos.Y])
+		if (iter == pos.X)
+			++score;
+	candy[pos.Y].remove(pos.X);
 }
 
 Player::Player(POSITION _pos)

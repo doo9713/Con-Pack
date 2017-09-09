@@ -63,6 +63,7 @@ public:
 	}
 	void Flipping()
 	{
+		Sleep(50);
 		SetConsoleActiveScreenBuffer(ScreenBuffer[ScreenNumber]);
 		ScreenNumber = ScreenNumber ^ 0x01;
 	}

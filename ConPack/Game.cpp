@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Player.h"
+#include "Enemy.h"
 #include "Stage1.h"
 
 void Game::mainActive()
@@ -9,8 +10,9 @@ void Game::mainActive()
 	int cnt = 0;
 	char * obj[30];
 	
-	POSITION pos(2, 1);
-	Player player(pos);
+	POSITION posPlayer(2, 1), posEnemy(76,1);
+	Player player(posPlayer);
+	Enemy enemy(posEnemy);
 	Stage1 map;
 
 	while (1)
@@ -20,16 +22,20 @@ void Game::mainActive()
 		//BackGround();
 		map.PrintMap();
 		player.printPlayer();	
+		enemy.printEnemy();
 		player.printScore();
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
-			player.Goleft(&pos);
+			player.Goleft(&posPlayer, map.GetTriggerPos());
 		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
-			player.GoRight(&pos);
+			player.GoRight(&posPlayer, map.GetTriggerPos());
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
-			player.GoUp(&pos);
+			player.GoUp(&posPlayer, map.GetTriggerPos());
 		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
-			player.GoDown(&pos);
+			player.GoDown(&posPlayer, map.GetTriggerPos());
+
+		player.eatCandy(map.GetCandyPos());
+		enemy.EnemyMove(map.GetTriggerPos());
 
 		CONFLIP;
 	}

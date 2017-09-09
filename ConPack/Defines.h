@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <set>
+#include <random>
 using namespace std;
 
 #define WINSIZEX 80
@@ -33,11 +35,24 @@ enum TextColor
 
 typedef struct tagPosition
 {
-	double X;
-	double Y;
-	tagPosition(double _x = 0, double _y = 0)
+	int X;
+	int Y;
+	tagPosition(int _x = 0, int _y = 0)
 		: X(_x), Y(_y)
 	{}
+	tagPosition& operator=(tagPosition pos)
+	{
+		X = pos.X;
+		Y = pos.Y;
+		return *this;
+	}
+	bool operator==(tagPosition pos)
+	{
+		if (X == pos.X && Y == pos.Y)
+			return true;
+		else
+			return false;
+	}
 } POSITION;
 
 typedef struct tagSelectMenuPosition
@@ -72,8 +87,23 @@ void PrintMarker(POSITION pos);
 void SettingMenuPos(PSMP smp, INT max, INT xpos, INT ypos);
 void PrintMenu(PSMP smp, INT cnt, INT Select, const string data[]);
 
+/* ETC Function */
+int ReadInt(string Colum, string Key, string Path, int Default = 0);
+float ReadFloat(string Colum, string Key, string Path, float Default = 0);
+string ReadString(string Colum, string Key, string Path, string Default = "Error");
+string IntToString(int data);
+vector<int> SplitUseToken(string s, string token);
+int Random(int Min, int Max);
+
 /* Unit Defines */
 #define CHECKOUTSIDE(x, y) (x < 1 || x > 77 || y < 1 || y > 28) || (x > 31 && x < 47 && y < 3)
 
 /* Player Defines */
 #define PLAYER "б▄"
+#define ENEMY  "бс"
+
+/* Enemy Defines */
+#define LEFT 0
+#define RIGHT 1
+#define UP 2
+#define DOWN 3

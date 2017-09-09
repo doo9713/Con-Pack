@@ -6,10 +6,12 @@ class Unit
 protected :
 	POSITION pos;
 public :
-	void Goleft(POSITION * _pos);
-	void GoRight(POSITION * _pos);
-	void GoUp(POSITION * _pos);
-	void GoDown(POSITION * _pos);
+	void Goleft(POSITION * _pos, vector<INT> _trigger[]);
+	void GoRight(POSITION * _pos, vector<INT> _trigger[]);
+	void GoUp(POSITION * _pos, vector<INT> _trigger[]);
+	void GoDown(POSITION * _pos, vector<INT> _trigger[]);
+public :
+	bool checkTrigger(POSITION _pos, vector<INT> _trigger);
 public :
 	Unit(POSITION _pos);
 	~Unit();
