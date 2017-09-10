@@ -1,13 +1,13 @@
 #include "Player.h"
 
-void Player::printPlayer()
+void Player::PrintPlayer()
 {
 	CONSOLE.SetTextColor(YELLOW);
 	CONPOS(pos.X, pos.Y) << player;
 	CONSOLE.SetTextColor(WHITE);
 }
 
-void Player::printScore()
+void Player::PrintScore()
 {
 	CONPOS(32, 0) << "¦¨";
 	CONPOS(32, 1) << "¦¢";
@@ -22,12 +22,19 @@ void Player::printScore()
 	CONSOLE.SetTextColor(WHITE);
 }
 
-void Player::eatCandy(list<INT> * candy)
+void Player::EatCandy(list<INT> * candy)
 {
 	for (auto iter : candy[pos.Y])
 		if (iter == pos.X)
 			++score;
 	candy[pos.Y].remove(pos.X);
+}
+
+bool Player::TriggerEnemy(POSITION enemypos)
+{
+	if (pos == enemypos)
+		return true;
+	return false;
 }
 
 Player::Player(POSITION _pos)

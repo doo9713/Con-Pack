@@ -12,6 +12,7 @@ public :
 	void GoDown(POSITION * _pos, vector<INT> _trigger[]);
 public :
 	bool checkTrigger(POSITION _pos, vector<INT> _trigger);
+	POSITION GetPosition() { return pos; }
 public :
 	Unit(POSITION _pos);
 	~Unit();

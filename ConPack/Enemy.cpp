@@ -1,7 +1,7 @@
 #include "Enemy.h"
 
 
-void Enemy::printEnemy()
+void Enemy::PrintEnemy()
 {
 	CONSOLE.SetTextColor(LIGHTRED);
 	CONPOS(pos.X, pos.Y) << enemy;
@@ -85,6 +85,12 @@ void Enemy::EnemyMove(vector<INT> _trigger[])
 	default:
 		break;
 	}
+}
+
+void Enemy::EnemyDisable()
+{
+	pos.X = 0;
+	pos.Y = 0;
 }
 
 Enemy::Enemy(POSITION _pos)

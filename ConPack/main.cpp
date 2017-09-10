@@ -43,9 +43,10 @@ void main()
 			switch (Select)
 			{
 			case START:			
-				start.mainActive();
+				start.MainActive(NEWGAME);
 				break;
 			case LOAD:
+				start.MainActive(LOADGAME);
 				break;
 			case EXIT:
 				return;

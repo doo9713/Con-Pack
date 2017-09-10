@@ -1,5 +1,4 @@
 #include "Unit.h"
-#include "Stage1.h"
 
 
 bool Unit::checkTrigger(POSITION _pos, vector<INT> _trigger)

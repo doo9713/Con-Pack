@@ -11,9 +11,11 @@ public :
 	vector<INT> * GetTriggerPos() { return triggerPos; }
 	list<INT> * GetCandyPos() { return candyPos; }
 public :
+	bool CheckCandy();
+	void PrintMap();
 	void PrintCandy();
 public :
-	Map(int stage);
+	Map();
 	~Map();
 };
 

@@ -107,3 +107,7 @@ int Random(int Min, int Max);
 #define RIGHT 1
 #define UP 2
 #define DOWN 3
+
+/* Game Defines */
+#define NEWGAME false
+#define LOADGAME true
