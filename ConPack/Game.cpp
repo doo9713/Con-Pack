@@ -191,6 +191,8 @@ void Game::MainActive(bool NewOrLoad)
 			char path[64];
 			slot = Select + 1;
 			wsprintfA(path, "Slot%d.sav", slot);
+			if(NewOrLoad == LOADGAME && !CheckSlot(path, slot))
+				continue;
 			if (NewOrLoad == NEWGAME)
 				Save(path, 1, 1, 0, 0, 0);
 			if (NewOrLoad == LOADGAME)
@@ -268,6 +270,7 @@ void Game::GameActive(int select)
 		enemy3.EnemyDisable();
 	}
 
+	int flipConunt = 0;
 	isClear = false;
 	isOver = false;
 	while (1)
@@ -302,6 +305,7 @@ void Game::GameActive(int select)
 
 			player.EatCandy(map.GetCandyPos());
 			
+			if(flipConunt % 2 == 0)
 			switch (select)
 			{
 			case 2:
@@ -322,6 +326,8 @@ void Game::GameActive(int select)
 
 		if (isClear || isOver)
 		{
+			BackGround();
+
 			if (isClear)
 				PrintClear();
 			if (isOver)
@@ -340,6 +346,9 @@ void Game::GameActive(int select)
 			}
 		}
 
+		++flipConunt;
+		if (flipConunt == 10)
+			flipConunt = 0;
 		CONFLIP;
 	}
 }
